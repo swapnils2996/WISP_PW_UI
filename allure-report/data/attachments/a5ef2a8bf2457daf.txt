@@ -1,0 +1,4 @@
+navigateToPurchaseOrders tabs: []
+PO tab count: 0
+No PO tab found - using sidebar
+OR_WTC05 tableDebug after collapse: [0] display=table height=2651.5 rows=72 visible=true

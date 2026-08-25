@@ -1,0 +1,51 @@
+{
+  "name": "wisp_pw_ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test & node post-run.js",
+    "test:applicationAlerts": "playwright test tests/applicationAlerts.spec.ts & node post-run.js application-alerts",
+    "test:archiveRecords": "playwright test tests/archiveRecords.spec.ts & node post-run.js archive-records",
+    "test:deploymentUtilities": "playwright test tests/deploymentUtilities.spec.ts & node post-run.js deployment-utilities",
+    "test:directReplenishment": "playwright test tests/directReplenishment.spec.ts & node post-run.js direct-replenishment",
+    "test:ebf": "playwright test tests/electronicBusinessForms.spec.ts & node post-run.js electronic-business-forms",
+    "test:genericSKU": "playwright test tests/genericSKUListBuilder.spec.ts & node post-run.js generic-sku-list-builder",
+    "test:inventoryAdjustments": "playwright test tests/inventoryAdjustments.spec.ts & node post-run.js inventory-adjustments",
+    "test:itemInquiry": "playwright test tests/itemInquiry.spec.ts & node post-run.js item-inquiry",
+    "test:labelRequest": "playwright test tests/labelRequest.spec.ts & node post-run.js label-request",
+    "test:login": "playwright test tests/login.spec.ts & node post-run.js login",
+    "test:orderReceiving": "playwright test tests/orderReceiving.spec.ts & node post-run.js order-receiving",
+    "test:planogram": "playwright test tests/planogram.spec.ts & node post-run.js planogram",
+    "test:priceChange": "playwright test tests/priceChangeActivation.spec.ts & node post-run.js price-change-activation",
+    "test:regression": "playwright test tests/regressionTest.spec.ts & node post-run.js regression",
+    "test:reports": "playwright test tests/reports.spec.ts & node post-run.js reports",
+    "test:storeAddress": "playwright test tests/storeAddressInquiry.spec.ts & node post-run.js store-address-inquiry",
+    "test:userManagement": "playwright test tests/userManagement.spec.ts & node post-run.js user-management",
+    "allure:generate": "node generate-allure-report.js",
+    "allure:open": "node report-server.js",
+    "allure:open:folder": "node report-server.js",
+    "test:allure": "playwright test & node post-run.js",
+    "cleanup:reports": "node cleanup-reports.js",
+    "cleanup:schedule": "schtasks /create /tn \"WISP_Cleanup_Allure_Reports\" /tr \"node \\\"C:\\Users\\WISP Automation\\WISP_PW_UI\\cleanup-reports.js\\\"\" /sc hourly /mo 1 /f && echo Scheduled task registered.",
+    "cleanup:unschedule": "schtasks /delete /tn \"WISP_Cleanup_Allure_Reports\" /f && echo Scheduled task removed."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/archiver": "^7.0.0",
+    "@types/node": "^25.6.0",
+    "@types/nodemailer": "^8.0.0",
+    "allure-commandline": "^2.38.1",
+    "allure-playwright": "^3.7.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "nodemailer": "^8.0.7",
+    "pg": "^8.20.0"
+  }
+}

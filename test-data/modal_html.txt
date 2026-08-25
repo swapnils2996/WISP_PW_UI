@@ -1,0 +1,117 @@
+<app-update-user _nghost-c77="" class="ng-star-inserted"><div _ngcontent-c77="" class="modal-dialog top ui-draggable ui-draggable-handle">
+  <div _ngcontent-c77="" class="modal-content">
+    <div _ngcontent-c77="" class="panel-group">
+      <div _ngcontent-c77="" class="panel panel-default">
+        <div _ngcontent-c77="" class="panel-heading">
+          <div _ngcontent-c77="" class="modal-header" style="text-align:center;">
+            <h4 _ngcontent-c77="">
+              Modify User
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div _ngcontent-c77="" class="modal-body">
+      <div _ngcontent-c77="" class="row">
+        <div _ngcontent-c77="" class="col-md-4 col-sm-4">User Name:</div>
+        <div _ngcontent-c77="" class="col-md-8 col-sm-8">
+          <label _ngcontent-c77="" style="font-weight:normal; color:black;">2738971</label>
+        </div>
+      </div>
+      <div _ngcontent-c77="">&nbsp;</div>
+      <div _ngcontent-c77="" class="row">
+        <div _ngcontent-c77="" class="col-md-4 col-sm-4">Full Name:</div>
+        <div _ngcontent-c77="" class="col-md-8 col-sm-8">
+          <label _ngcontent-c77="" style="font-weight:normal; color:black;">Steve (SM)</label>
+        </div>
+      </div>
+      <div _ngcontent-c77="">&nbsp;</div>
+      <div _ngcontent-c77="" class="row">
+
+        <div _ngcontent-c77="" class="col-md-4 col-sm-4">Password:</div>
+        <div _ngcontent-c77="" class="col-md-7 col-sm-7">
+          <input _ngcontent-c77="" class="form-control ng-untouched ng-pristine ng-valid" type="password" ng-reflect-model=""></div>
+
+      </div>
+      <div _ngcontent-c77="">&nbsp;</div>
+      <div _ngcontent-c77="" class="row">
+        <div _ngcontent-c77="" class="col-md-4 col-sm-4">Confirm Password:</div>
+        <div _ngcontent-c77="" class="col-md-7 col-sm-7">
+          <input _ngcontent-c77="" class="form-control ng-untouched ng-pristine ng-valid" type="password" ng-reflect-model=""></div>
+        <div _ngcontent-c77="" class="col-md-1 col-sm-1"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div>
+      </div>
+      <div _ngcontent-c77="">&nbsp;</div>
+      <div _ngcontent-c77="" class="row">
+        <div _ngcontent-c77="" class="col-md-4 col-sm-4">Is User Locked Out:</div>
+        <div _ngcontent-c77="" class="col-md-8 col-sm-8">
+          <input _ngcontent-c77="" name="limitsearch" style="height: 25px;" type="checkbox" ng-reflect-name="limitsearch" ng-reflect-model="true" class="ng-untouched ng-pristine ng-valid"></div>
+
+      </div>
+      <div _ngcontent-c77="">&nbsp;</div>
+      <div _ngcontent-c77="" class="row">
+
+        <div _ngcontent-c77="" class="col-md-4 col-sm-4">Assigned Role:</div>
+        <div _ngcontent-c77="" class="col-md-8 col-sm-4">
+          <label _ngcontent-c77="" style="font-weight:normal; color:black;">Manager</label>
+        </div>
+
+      </div>
+      <div _ngcontent-c77="">&nbsp;</div>
+      <div _ngcontent-c77="" class="row">
+
+        <div _ngcontent-c77="" class="col-md-4 col-sm-4">New Role:</div>
+        <div _ngcontent-c77="" class="col-md-7 col-sm-8">
+          <select _ngcontent-c77="" class="form-control ng-untouched ng-pristine ng-valid">&nbsp;
+                  <option _ngcontent-c77="" disabled="" selected="" value="0: null">Select a role for this user:</option> 
+                  <!--bindings={
+  "ng-reflect-ng-for-of": "Admin,Associate,Customer Exper"
+}--><option _ngcontent-c77="" value="1: Admin" ng-reflect-ng-value="Admin" class="ng-star-inserted">
+                  Admin&nbsp;
+                  </option><option _ngcontent-c77="" value="2: Associate" ng-reflect-ng-value="Associate" class="ng-star-inserted">
+                  Associate&nbsp;
+                  </option><option _ngcontent-c77="" value="3: Customer Experience Manager" ng-reflect-ng-value="Customer Experience Manager" class="ng-star-inserted">
+                  Customer Experience Manager&nbsp;
+                  </option><option _ngcontent-c77="" value="4: Customer Experience Specialist" ng-reflect-ng-value="Customer Experience Specialist" class="ng-star-inserted">
+                  Customer Experience Specialist&nbsp;
+                  </option><option _ngcontent-c77="" value="5: Department Manager" ng-reflect-ng-value="Department Manager" class="ng-star-inserted">
+                  Department Manager&nbsp;
+                  </option><option _ngcontent-c77="" value="6: Front End Specialist" ng-reflect-ng-value="Front End Specialist" class="ng-star-inserted">
+                  Front End Specialist&nbsp;
+                  </option><option _ngcontent-c77="" value="7: Manager" ng-reflect-ng-value="Manager" class="ng-star-inserted">
+                  Manager&nbsp;
+                  </option><option _ngcontent-c77="" value="8: Presentation Replenishment Manager" ng-reflect-ng-value="Presentation Replenishment Man" class="ng-star-inserted">
+                  Presentation Replenishment Manager&nbsp;
+                  </option><option _ngcontent-c77="" value="9: Presentation Replenishment Specialist" ng-reflect-ng-value="Presentation Replenishment Spe" class="ng-star-inserted">
+                  Presentation Replenishment Specialist&nbsp;
+                  </option><option _ngcontent-c77="" value="10: Sales Specialist" ng-reflect-ng-value="Sales Specialist" class="ng-star-inserted">
+                  Sales Specialist&nbsp;
+                  </option><option _ngcontent-c77="" value="11: Support" ng-reflect-ng-value="Support" class="ng-star-inserted">
+                  Support&nbsp;
+                  </option><option _ngcontent-c77="" value="12: Support Specialist" ng-reflect-ng-value="Support Specialist" class="ng-star-inserted">
+                  Support Specialist&nbsp;
+                  </option><option _ngcontent-c77="" value="13: Vendor" ng-reflect-ng-value="Vendor" class="ng-star-inserted">
+                  Vendor&nbsp;
+                  </option>&nbsp;
+            </select></div>
+
+      </div>
+    <div _ngcontent-c77="" class="row">
+      <div _ngcontent-c77="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="color:red"></div>
+    </div>
+  </div>
+  <div _ngcontent-c77="" class="modal-footer">
+    <div _ngcontent-c77="" class="row">
+        <div _ngcontent-c77="" class="col-md-3 col-sm-3 col-lg-3"></div>
+        <div _ngcontent-c77="" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <button _ngcontent-c77="" class="btn btn-primary buttonsize" type="button">Update</button>
+        </div>
+        <div _ngcontent-c77="" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+           <button _ngcontent-c77="" class="btn btn-warning buttonsize" type="button">Close</button>
+        </div>
+          <div _ngcontent-c77="" class="col-md-3 col-sm-3 col-lg-3"></div>
+      </div>
+  </div>
+</div>
+</div></app-update-user>

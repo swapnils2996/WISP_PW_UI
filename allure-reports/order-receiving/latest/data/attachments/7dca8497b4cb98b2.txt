@@ -1,0 +1,5 @@
+navigateToPurchaseOrders tabs: [ 'Purchase Orderx' ]
+PO tab count: 1
+Clicking tab: Purchase Orderx
+Tab isActive: true
+OR_WTC05 tableDebug after collapse: [0] display=table height=2466.5 rows=67 visible=true

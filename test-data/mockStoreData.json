@@ -1,0 +1,130 @@
+{
+  "stores": [
+    {
+      "StoreNo": 1425,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "SAN TAN VALLEY",
+        "State": "AZ",
+        "Phone": "",
+        "AddressLine1": "NEW STORE 2026",
+        "AddressLine2": "CONTACT CHRIS NEU FOR MORE INF",
+        "AddressLine3": "NEUC@MICHAELS.COM",
+        "Zip": "75038"
+      }
+    },
+    {
+      "StoreNo": 1437,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "SHORELINE",
+        "State": "WA",
+        "Phone": "",
+        "AddressLine1": "NEW STORE 2026",
+        "AddressLine2": "CONTACT CHRIS NEU FOR INFO",
+        "AddressLine3": "NEUC@MICHAELS.COM",
+        "Zip": "75038"
+      }
+    },
+    {
+      "StoreNo": 1438,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "LOVELAND",
+        "State": "CO",
+        "Phone": "",
+        "AddressLine1": "NEW STORE 2026",
+        "AddressLine2": "CONTACT CHRIS NEU FOR INFO",
+        "AddressLine3": "NEUC@MICHAELS.COM",
+        "Zip": "75038"
+      }
+    },
+    {
+      "StoreNo": 8385,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "ROGERS",
+        "State": "AR",
+        "Phone": "479-391-3556",
+        "AddressLine1": "NEW STORE 2026",
+        "AddressLine2": "CONTACT CHRIS NEU FOR INFO",
+        "AddressLine3": "NEUC@MICHAELS.COM",
+        "Zip": "72758"
+      }
+    },
+    {
+      "StoreNo": 8386,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "HUNTINGTON BEACH",
+        "State": "CA",
+        "Phone": "",
+        "AddressLine1": "NEW STORE 2026",
+        "AddressLine2": "CONTACT CHRIS NEU FOR INFO",
+        "AddressLine3": "NEUC@MICHAELS.COM",
+        "Zip": "92646"
+      }
+    },
+    {
+      "StoreNo": 8387,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "BANDERA",
+        "State": "TX",
+        "Phone": "210-293-2339",
+        "AddressLine1": "NEW STORE 2026",
+        "AddressLine2": "CONTACT CHRIS NEU FOR INFO",
+        "AddressLine3": "NEUC@MICHAELS.COM",
+        "Zip": "78003"
+      }
+    },
+    {
+      "StoreNo": 9194,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "PARSIPPANY",
+        "State": "NJ",
+        "Phone": "",
+        "AddressLine1": "CLOSED STORE",
+        "AddressLine2": "1099 RTE 46 E",
+        "AddressLine3": "",
+        "Zip": "07054-2177"
+      }
+    },
+    {
+      "StoreNo": 9972,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "CHANDLER",
+        "State": "AZ",
+        "Phone": "(480) 782-0333",
+        "AddressLine1": ".",
+        "AddressLine2": "285 N FEDERAL ST",
+        "AddressLine3": "",
+        "Zip": "85226-3192"
+      }
+    },
+    {
+      "StoreNo": 9976,
+      "StoreType": "S",
+      "CloseDate": null,
+      "ShippingAddress": {
+        "City": "FT. COLLINS",
+        "State": "CO",
+        "Phone": "(970) 226-2128",
+        "AddressLine1": "PAVILION SHOPPING CENTER",
+        "AddressLine2": "4330 S COLLEGE AVE",
+        "AddressLine3": "",
+        "Zip": "80525-3021"
+      }
+    }
+  ]
+}

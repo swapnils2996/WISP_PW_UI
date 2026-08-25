@@ -1,0 +1,199 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: reports.spec.ts >> Reports >> RP_WTC14 - Cross Module Resilience: offline handling and network recovery
+- Location: tests/reports.spec.ts:284:7
+
+# Error details
+
+```
+Error: Department Class Report page should still be accessible after network recovery
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e9] [cursor=pointer]: print
+  - generic [ref=e11]:
+    - generic [ref=e14]: 
+    - generic [ref=e17]:
+      - list [ref=e18]:
+        - listitem
+        - listitem [ref=e19]:
+          - generic [ref=e20] [cursor=pointer]:
+            - text: Reprint Existing Report
+            - generic "Close Tab" [ref=e21]:
+              - superscript [ref=e22]: x
+        - listitem [ref=e23]:
+          - generic [ref=e24] [cursor=pointer]:
+            - text: Department Class Report
+            - generic "Close Tab" [ref=e25]:
+              - superscript [ref=e26]: x
+        - listitem [ref=e27]:
+          - generic [ref=e28] [cursor=pointer]:
+            - text: View Existing Report
+            - generic "Close Tab" [ref=e29]:
+              - superscript [ref=e30]: x
+      - generic: 
+      - generic:  
+      - generic: 
+      - iframe [ref=e37]:
+        
+```
+
+# Test source
+
+```ts
+  193 |     expect(result.printBtnVisible,
+  194 |       'Print button should be visible').toBe(true);
+  195 | 
+  196 |     // Step 2: From > To validation
+  197 |     expect(result.dcAreaOrderErrText.length,
+  198 |       'From DC Area > To DC Area should trigger validation message').toBeGreaterThan(0);
+  199 | 
+  200 |     // Step 3: valid range completes without crash
+  201 |     expect(result.viewResponseVisible || result.viewResponseText.length >= 0,
+  202 |       'View with valid DC Area range should complete without crashing').toBe(true);
+  203 |     expect(result.printResponseVisible || result.printResponseText.length >= 0,
+  204 |       'Print with valid DC Area range should complete without crashing').toBe(true);
+  205 |   });
+  206 | 
+  207 |   // ── RP_WTC10: Reprint Existing Reports UI walkthrough ────────────────────
+  208 |   test('RP_WTC10 - Reprint Existing Reports: UI and filter walkthrough', async () => {
+  209 |     test.setTimeout(120000);
+  210 |     const result = await rpPage.tc10_reprintUI(SCREENSHOTS_DIR);
+  211 | 
+  212 |     expect(result.pageLoaded,
+  213 |       'Reprint Existing Reports component should be visible').toBe(true);
+  214 |     expect(result.expandBtnVisible,
+  215 |       'Expand button should be present in Actions panel').toBe(true);
+  216 |     expect(result.viewBtnVisible,
+  217 |       'View button should be present in Actions panel').toBe(true);
+  218 |     expect(result.printBtnVisible,
+  219 |       'Print button should be present in Actions panel').toBe(true);
+  220 |     expect(result.refreshBtnVisible,
+  221 |       'Refresh button should be present in Actions panel').toBe(true);
+  222 |     expect(result.bannerVisible,
+  223 |       '"Reports Loaded" banner should be visible').toBe(true);
+  224 |     expect(result.bannerText.toLowerCase()).toMatch(/loaded|ready|report/);
+  225 |     expect(result.filterVisible,
+  226 |       'Filter section should be visible').toBe(true);
+  227 |     expect(result.createdChipVisible,
+  228 |       'Created filter chip should be visible').toBe(true);
+  229 |     expect(result.reportDescChipVisible,
+  230 |       'Report Description filter chip should be visible').toBe(true);
+  231 |     expect(result.rowsVisible,
+  232 |       'Report rows (date groups with "+" expand buttons) should be visible').toBe(true);
+  233 |     expect(result.expandClicked,
+  234 |       'Expand button should be clickable').toBe(true);
+  235 |   });
+  236 | 
+  237 |   // ── RP_WTC11: Reprint E2E — Select, View, Print, Refresh ─────────────────
+  238 |   test('RP_WTC11 - Reprint Existing Reports: select, view, print, and refresh', async () => {
+  239 |     test.setTimeout(120000);
+  240 |     const result = await rpPage.tc11_reprintE2E(SCREENSHOTS_DIR);
+  241 | 
+  242 |     expect(result.pageLoaded,
+  243 |       'Reprint Existing Reports page should load').toBe(true);
+  244 |     expect(result.rowCount,
+  245 |       'There should be at least one report row available').toBeGreaterThan(0);
+  246 |     expect(result.rowSelected,
+  247 |       'A report row should be selectable').toBe(true);
+  248 |     expect(result.viewClicked,
+  249 |       'View button should be clickable after row selection').toBe(true);
+  250 |     expect(result.printClicked,
+  251 |       'Print button should be clickable after row selection').toBe(true);
+  252 |     expect(result.refreshClicked,
+  253 |       'Refresh button should be clickable').toBe(true);
+  254 |     expect(result.afterRefreshBannerVisible,
+  255 |       '"Reports Loaded" banner should reappear after Refresh').toBe(true);
+  256 |   });
+  257 | 
+  258 |   // ── RP_WTC12: Reprint negative — no selection errors ─────────────────────
+  259 |   test('RP_WTC12 - Reprint Existing Reports: no-selection validation messages', async () => {
+  260 |     test.setTimeout(120000);
+  261 |     const result = await rpPage.tc12_reprintNegative(SCREENSHOTS_DIR);
+  262 | 
+  263 |     expect(result.pageLoaded,
+  264 |       'Reprint Existing Reports page should load').toBe(true);
+  265 |     expect(result.noSelViewErrText.length,
+  266 |       'Clicking View with no row selected should produce an error message').toBeGreaterThan(0);
+  267 |     expect(result.noSelPrintErrText.length,
+  268 |       'Clicking Print with no row selected should produce an error message').toBeGreaterThan(0);
+  269 |   });
+  270 | 
+  271 |   // ── RP_WTC13: View Existing Report rendering ──────────────────────────────
+  272 |   test('RP_WTC13 - View Existing Report: rendering and viewer behavior', async () => {
+  273 |     test.setTimeout(120000);
+  274 |     const result = await rpPage.tc13_viewExistingReport(SCREENSHOTS_DIR);
+  275 | 
+  276 |     expect(result.pageLoaded,
+  277 |       'View Existing Report should be reachable after clicking View on any report').toBe(true);
+  278 |     // Viewer or iframe may open; page should not crash
+  279 |     expect(result.viewerVisible || result.iframePresent || true,
+  280 |       'Viewer container or iframe should be present, or page remains stable').toBe(true);
+  281 |   });
+  282 | 
+  283 |   // ── RP_WTC14: Cross Module Resilience ────────────────────────────────────
+  284 |   test('RP_WTC14 - Cross Module Resilience: offline handling and network recovery', async () => {
+  285 |     test.setTimeout(120000);
+  286 |     const result = await rpPage.tc14_crossModuleResilience(SCREENSHOTS_DIR, context);
+  287 | 
+  288 |     expect(result.offlineSet,
+  289 |       'Network should be settable to offline').toBe(true);
+  290 |     expect(result.networkRestored,
+  291 |       'Network should be restorable after offline test').toBe(true);
+  292 |     expect(result.postRestorePageLoaded,
+> 293 |       'Department Class Report page should still be accessible after network recovery').toBe(true);
+      |                                                                                         ^ Error: Department Class Report page should still be accessible after network recovery
+  294 |   });
+  295 | 
+  296 |   // ── RP_WTC15: Reprint – "Created" chip switches to flat expanded view ─────────
+  297 |   test('RP_WTC15 - Reprint Created chip switches to flat expanded view', async () => {
+  298 |     test.setTimeout(90000);
+  299 |     const result: RP_TC15Result = await rpPage.tc15_reprintCreatedChip(SCREENSHOTS_DIR);
+  300 | 
+  301 |     expect(result.createdChipClicked,
+  302 |       'Created chip button should be clickable on the Reprint page').toBe(true);
+  303 |     expect(result.flatViewVisible,
+  304 |       'After clicking Created chip, flat expanded view should appear with column headers').toBe(true);
+  305 |     expect(result.reportDescColVisible,
+  306 |       'Report Description column should be visible in flat view').toBe(true);
+  307 |     expect(result.createdColVisible,
+  308 |       'Created column should be visible in flat view').toBe(true);
+  309 |     expect(result.rowCountInFlatView,
+  310 |       'Flat view row count should be a non-negative number').toBeGreaterThanOrEqual(0);
+  311 |   });
+  312 | 
+  313 |   // // ── RP_WTC16: Reprint – inline filter in flat view ────────────────────────────
+  314 |   // test('RP_WTC16 - Reprint flat view inline filter narrows and clears rows', async () => {
+  315 |   //   test.setTimeout(90000);
+  316 |   //   const result: RP_TC16Result = await rpPage.tc16_reprintFlatViewFilter(SCREENSHOTS_DIR);
+  317 | 
+  318 |   //   expect(result.filterInputVisible,
+  319 |   //     'Filter input should be visible in Reprint flat view').toBe(true);
+  320 |   //   expect(result.filterApplied,
+  321 |   //     'Filter input should accept text and apply filtering').toBe(true);
+  322 |   //   expect(result.filterNarrowed,
+  323 |   //     'Row count after filtering should be less than or equal to unfiltered row count').toBe(true);
+  324 |   //   expect(result.filterCleared,
+  325 |   //     'Filter input should be clearable to restore full list').toBe(true);
+  326 |   // });
+  327 | 
+  328 | });
+  329 | 
+```

@@ -1,0 +1,268 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: electronicBusinessForms.spec.ts >> Electronic Business Forms >> EBF_AUR_WTC02 - Select alarm company type - ADT, Vector, Other radio buttons
+- Location: tests/electronicBusinessForms.spec.ts:88:7
+
+# Error details
+
+```
+Test timeout of 120000ms exceeded.
+```
+
+```
+Error: locator.isChecked: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('app-alarm-update-report').locator('input[type="radio"]').first()
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - generic [ref=e9]: account_circle
+          - text: System
+        - generic [ref=e11] [cursor=pointer]: print
+        - button "Logout" [ref=e12] [cursor=pointer]
+  - generic [ref=e14]:
+    - generic [ref=e17] [cursor=pointer]: 
+    - generic [ref=e20]:
+      - list [ref=e21]:
+        - listitem
+      - generic [ref=e25]:
+        - generic [ref=e27]:
+          - img [ref=e29]
+          - separator [ref=e30]
+          - generic [ref=e31]: Windows In-Store Processor
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - generic [ref=e37]: UserName (Logged in as)
+            - generic [ref=e38]: ": system"
+          - generic [ref=e39]:
+            - generic [ref=e40]: Role Assigned
+            - generic [ref=e41]: ": Admin"
+          - generic [ref=e42]:
+            - generic [ref=e43]: ISP Application Version
+            - generic [ref=e44]: ": 21.0.0"
+          - generic [ref=e45]:
+            - generic [ref=e46]: Store Number (Host Name)
+            - generic [ref=e47]: ": SR097402"
+```
+
+# Test source
+
+```ts
+  386 |           const tab = Array.from(document.querySelectorAll('.nav-tabs li a'))
+  387 |             .find(a => (a.textContent || '').includes(title)) as HTMLElement | null;
+  388 |           if (tab) tab.click();
+  389 |         }, tabTitle);
+  390 |         await this.page.waitForTimeout(500);
+  391 |         return true;
+  392 |       }
+  393 |       // Click sidebar to enter Angular's zone.js-patched event loop, then open tab
+  394 |       await this.page.evaluate((method: string) => {
+  395 |         const launcher = document.querySelector('.sidebar-launcher') as HTMLElement | null;
+  396 |         if (launcher) launcher.click();
+  397 |         const probe = (window as any).ng.probe(document.querySelector('app-main'));
+  398 |         const comp = probe.componentInstance;
+  399 |         if (comp[method]) comp[method]();
+  400 |       }, methodName);
+  401 |       await this.page.waitForTimeout(2500);
+  402 |       // Close sidebar if open
+  403 |       const sidebarOpen = await this.page.locator('#sideMenu').isVisible().catch(() => false);
+  404 |       if (sidebarOpen) {
+  405 |         await this.page.mouse.click(700, 300);
+  406 |         await this.page.waitForTimeout(300);
+  407 |       }
+  408 |       return true;
+  409 |     } catch {
+  410 |       return false;
+  411 |     }
+  412 |   }
+  413 | 
+  414 |   async waitForComponent(locator: Locator, timeout = 15000): Promise<boolean> {
+  415 |     try {
+  416 |       // Use 'attached' so the check passes even if sidebar overlaps the component
+  417 |       await locator.waitFor({ state: 'attached', timeout });
+  418 |       await this.page.waitForTimeout(300);
+  419 |       return true;
+  420 |     } catch {
+  421 |       return false;
+  422 |     }
+  423 |   }
+  424 | 
+  425 |   // ── Sidebar helpers ─────────────────────────────────────────────────────────
+  426 |   async closeSidebarIfOpen(): Promise<void> {
+  427 |     const sidebar = this.page.locator('#sideMenu');
+  428 |     const isOpen = await sidebar.isVisible().catch(() => false);
+  429 |     if (isOpen) {
+  430 |       await this.page.mouse.click(700, 300);
+  431 |       await this.page.waitForTimeout(400);
+  432 |     }
+  433 |   }
+  434 | 
+  435 |   // Count mat-rows via JS to bypass any sidebar overlay issues
+  436 |   async countMatRows(tableIndex: number): Promise<number> {
+  437 |     return this.page.evaluate((idx: number) => {
+  438 |       const tables = document.querySelectorAll('mat-table');
+  439 |       if (!tables[idx]) return 0;
+  440 |       return tables[idx].querySelectorAll('mat-row').length;
+  441 |     }, tableIndex);
+  442 |   }
+  443 | 
+  444 |   // ══════════════════════════════════════════════════════════════════════════
+  445 |   // ALARM UPDATE REPORT test methods
+  446 |   // ══════════════════════════════════════════════════════════════════════════
+  447 | 
+  448 |   // EBF_AUR_WTC01 – Load form and validate general info
+  449 |   async tc_aur01_loadForm(screenshotDir: string, _data: EBFTestData): Promise<EBF_AUR_TC01Result> {
+  450 |     const opened = await this.openTabViaAngular('openAlarmUpadteReportPage', 'Alarm Update Report');
+  451 |     const tabOpened = await this.waitForComponent(this.aurComponent);
+  452 |     await this.closeSidebarIfOpen();
+  453 |     await this.page.waitForTimeout(500);
+  454 |     await this.takeScreenshot(screenshotDir, 'EBF_AUR_WTC01_form_loaded');
+  455 | 
+  456 |     const headerVisible = await this.aurHeader.isVisible().catch(() => false);
+  457 |     const headerText    = headerVisible ? ((await this.aurHeader.textContent()) ?? '').trim() : '';
+  458 |     const genInfoSectionVisible  = await this.aurGenInfoSection.isVisible().catch(() => false);
+  459 |     const storeNoLabelVisible    = await this.aurComponent.locator('label:has-text("Store#")').first().isVisible().catch(() => false);
+  460 |     const dateLabelVisible       = await this.aurComponent.locator('label:has-text("Date")').first().isVisible().catch(() => false);
+  461 |     const managerInputVisible    = await this.aurManagerInput.isVisible().catch(() => false);
+  462 |     const districtInputVisible   = await this.aurDistrictInput.isVisible().catch(() => false);
+  463 |     const alarmCompanySectionVisible = await this.aurComponent.locator('label:has-text("Alarm Company"), label:has-text("alarm company")').first().isVisible().catch(() => false);
+  464 |     const additionsSectionVisible    = await this.aurAddToListBtn.isVisible().catch(() => false);
+  465 |     const deletionsSectionVisible    = await this.aurDelAddToListBtn.isVisible().catch(() => false);
+  466 | 
+  467 |     return { tabOpened, headerVisible, headerText, genInfoSectionVisible, storeNoLabelVisible,
+  468 |       dateLabelVisible, managerInputVisible, districtInputVisible, alarmCompanySectionVisible,
+  469 |       additionsSectionVisible, deletionsSectionVisible };
+  470 |   }
+  471 | 
+  472 |   // EBF_AUR_WTC02 – Select alarm company radio buttons
+  473 |   async tc_aur02_selectAlarmCompany(screenshotDir: string): Promise<EBF_AUR_TC02Result> {
+  474 |     // Use JS click to bypass visibility/scroll constraints for Angular radio buttons
+  475 |     const clickRadio = async (index: number) => {
+  476 |       await this.page.evaluate((idx: number) => {
+  477 |         const aur = document.querySelector('app-alarm-update-report');
+  478 |         if (!aur) return;
+  479 |         const radio = aur.querySelectorAll('input[type="radio"]')[idx] as HTMLInputElement;
+  480 |         if (radio) { radio.click(); radio.dispatchEvent(new Event('change', { bubbles: true })); }
+  481 |       }, index);
+  482 |       await this.page.waitForTimeout(200);
+  483 |     };
+  484 | 
+  485 |     await clickRadio(0);
+> 486 |     const adtRadioChecked = await this.aurRadioADT.isChecked();
+      |                                                    ^ Error: locator.isChecked: Target page, context or browser has been closed
+  487 | 
+  488 |     await clickRadio(1);
+  489 |     const vectorRadioChecked = await this.aurRadioVector.isChecked();
+  490 | 
+  491 |     await clickRadio(2);
+  492 |     const otherRadioChecked = await this.aurRadioOther.isChecked();
+  493 | 
+  494 |     // "Other" text input is the 8th text input (index 7) in the component
+  495 |     const otherTextInput = this.aurComponent.locator('input[type="text"]').nth(7);
+  496 |     const otherTextInputVisible = await otherTextInput.isVisible().catch(() => false);
+  497 |     await otherTextInput.fill('TestAlarm Co').catch(() => {});
+  498 |     await this.page.waitForTimeout(200);
+  499 |     const otherTextAccepted = (await otherTextInput.inputValue().catch(() => '')) === 'TestAlarm Co';
+  500 |     await this.takeScreenshot(screenshotDir, 'EBF_AUR_WTC02_radio_selected');
+  501 | 
+  502 |     return { adtRadioChecked, vectorRadioChecked, otherRadioChecked, otherTextInputVisible, otherTextAccepted };
+  503 |   }
+  504 | 
+  505 |   // EBF_AUR_WTC03 – Verify Additions/All Current grid, fill inputs, verify Add To List button + grid columns
+  506 |   // Note: The AUR form has a static datasource with 1 pre-populated empty row.
+  507 |   // The Add To List button is a UI-only element (no backend click handler in this version).
+  508 |   async tc_aur03_addContactsToAdditions(screenshotDir: string, data: EBFTestData): Promise<EBF_AUR_TC03Result> {
+  509 |     await this.closeSidebarIfOpen();
+  510 |     // Fill input fields to verify they accept input
+  511 |     await this.aurAddCallListSeq.fill(data.aurCallListSeq1 || '1');
+  512 |     await this.aurAddContactName.fill(data.aurContactName1 || 'John Doe');
+  513 |     await this.aurAddJobTitle.fill(data.aurJobTitle1 || 'Manager');
+  514 |     await this.aurAddHomePhone.fill(data.aurHomePhone1 || '5551234567');
+  515 |     await this.aurAddPasscode.fill(data.aurPasscode1 || '1234');
+  516 |     const inputsFilled = (await this.aurAddCallListSeq.inputValue()) !== '';
+  517 |     // Verify Add To List button is present and clickable
+  518 |     await this.aurAddToListBtn.click({ force: true });
+  519 |     await this.page.waitForTimeout(500);
+  520 |     const rowCountAfterAdd = await this.countMatRows(0);
+  521 |     await this.takeScreenshot(screenshotDir, 'EBF_AUR_WTC03_first_contact_filled');
+  522 | 
+  523 |     // Fill second contact and click
+  524 |     await this.aurAddCallListSeq.fill(data.aurCallListSeq2 || '2');
+  525 |     await this.aurAddContactName.fill(data.aurContactName2 || 'Jane Smith');
+  526 |     await this.aurAddJobTitle.fill(data.aurJobTitle2 || 'Assistant');
+  527 |     await this.aurAddHomePhone.fill(data.aurHomePhone2 || '5559876543');
+  528 |     await this.aurAddPasscode.fill(data.aurPasscode2 || '5678');
+  529 |     await this.aurAddToListBtn.click({ force: true });
+  530 |     await this.page.waitForTimeout(500);
+  531 |     const rowCountAfterSecondAdd = await this.countMatRows(0);
+  532 |     await this.takeScreenshot(screenshotDir, 'EBF_AUR_WTC03_second_contact_filled');
+  533 | 
+  534 |     const callListSeqHeaderVisible = await this.aurAdditionsGrid.locator('mat-header-cell').filter({ hasText: /Call List|CallList/i }).isVisible().catch(() => false);
+  535 |     const contactNameHeaderVisible = await this.aurAdditionsGrid.locator('mat-header-cell').filter({ hasText: /Contact Name/i }).isVisible().catch(() => false);
+  536 |     const jobTitleHeaderVisible    = await this.aurAdditionsGrid.locator('mat-header-cell').filter({ hasText: /Job Title/i }).isVisible().catch(() => false);
+  537 |     const homePhoneHeaderVisible   = await this.aurAdditionsGrid.locator('mat-header-cell').filter({ hasText: /Home Phone/i }).isVisible().catch(() => false);
+  538 |     const passcodeHeaderVisible    = await this.aurAdditionsGrid.locator('mat-header-cell').filter({ hasText: /Passcode/i }).isVisible().catch(() => false);
+  539 | 
+  540 |     return { inputsFilled, rowCountAfterAdd, rowCountAfterSecondAdd,
+  541 |       callListSeqHeaderVisible, contactNameHeaderVisible, jobTitleHeaderVisible,
+  542 |       homePhoneHeaderVisible, passcodeHeaderVisible };
+  543 |   }
+  544 | 
+  545 |   // EBF_AUR_WTC04 – Remove without selection (negative)
+  546 |   async tc_aur04_removeWithoutSelection(screenshotDir: string): Promise<EBF_AUR_TC04Result> {
+  547 |     await this.closeSidebarIfOpen();
+  548 |     const rowCountBeforeClick = await this.countMatRows(0);
+  549 |     await this.aurRemoveFromListBtn.click({ force: true });
+  550 |     await this.page.waitForTimeout(400);
+  551 |     const rowCountAfterNoSelRemove = await this.countMatRows(0);
+  552 |     const pageStable = await this.aurComponent.isVisible().catch(() => false);
+  553 |     await this.takeScreenshot(screenshotDir, 'EBF_AUR_WTC04_remove_no_selection');
+  554 |     return { rowCountBeforeClick, rowCountAfterNoSelRemove, pageStable };
+  555 |   }
+  556 | 
+  557 |   // EBF_AUR_WTC05 – Add to Deletions + verify info box + action buttons
+  558 |   async tc_aur05_deletionsAndInfoBox(screenshotDir: string, data: EBFTestData): Promise<EBF_AUR_TC05Result> {
+  559 |     await this.closeSidebarIfOpen();
+  560 |     await this.aurDelContactName.fill(data.aurDelContactName || 'Delete User');
+  561 |     await this.aurDelJobTitle.fill(data.aurDelJobTitle || 'Cashier');
+  562 |     await this.aurDelPasscode.fill(data.aurDelPasscode || 'REMOVE');
+  563 |     await this.aurDelAddToListBtn.click({ force: true });
+  564 |     await this.page.waitForTimeout(500);
+  565 |     const deletionsRowAdded    = (await this.countMatRows(1)) > 0;
+  566 |     const pleaseReadBoxVisible = await this.aurPleaseReadBox.isVisible().catch(() => false);
+  567 |     const sendEmailBtnVisible  = await this.aurSendEmailBtn.isVisible().catch(() => false);
+  568 |     const resetFormBtnVisible  = await this.aurResetFormBtn.isVisible().catch(() => false);
+  569 |     const sendEmailBtnEnabled  = await this.aurSendEmailBtn.isEnabled().catch(() => false);
+  570 |     const resetFormBtnEnabled  = await this.aurResetFormBtn.isEnabled().catch(() => false);
+  571 |     await this.takeScreenshot(screenshotDir, 'EBF_AUR_WTC05_deletions_and_infobox');
+  572 |     return { deletionsRowAdded, pleaseReadBoxVisible, sendEmailBtnVisible, resetFormBtnVisible, sendEmailBtnEnabled, resetFormBtnEnabled };
+  573 |   }
+  574 | 
+  575 |   // EBF_AUR_WTC06 – Verify Reset Form and Send Email buttons are present, clickable, page stable
+  576 |   // Note: Reset Form and Send Email buttons are UI-only in this version (no click handlers implemented).
+  577 |   async tc_aur06_resetAndSendEmail(screenshotDir: string): Promise<EBF_AUR_TC06Result> {
+  578 |     await this.closeSidebarIfOpen();
+  579 |     await this.aurManagerInput.fill('Test Manager');
+  580 |     await this.aurDistrictInput.fill('District 5');
+  581 |     await this.page.waitForTimeout(200);
+  582 |     const inputsFilledBeforeReset = (await this.aurManagerInput.inputValue()) === 'Test Manager';
+  583 | 
+  584 |     // Click Reset Form and verify page stability (button is UI-only, inputs retain values)
+  585 |     await this.aurResetFormBtn.click({ force: true });
+  586 |     await this.page.waitForTimeout(800);
+```

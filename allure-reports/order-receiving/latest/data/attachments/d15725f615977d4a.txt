@@ -1,0 +1,6 @@
+navigateToPurchaseOrders tabs: [ 'Worksheetsx' ]
+PO tab count: 0
+No PO tab found - using sidebar
+navigateToPurchaseOrders tabs: [ 'Worksheetsx', 'Purchase Order Receivex' ]
+PO tab count: 0
+No PO tab found - using sidebar

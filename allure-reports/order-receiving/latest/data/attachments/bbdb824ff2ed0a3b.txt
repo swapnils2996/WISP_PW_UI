@@ -1,0 +1,6 @@
+navigateToPurchaseOrders tabs: [ 'PO Receiving Sessionsx' ]
+PO tab count: 0
+No PO tab found - using sidebar
+navigateToPurchaseOrders tabs: [ 'PO Receiving Sessionsx', 'Purchase Order Receivex' ]
+PO tab count: 0
+No PO tab found - using sidebar

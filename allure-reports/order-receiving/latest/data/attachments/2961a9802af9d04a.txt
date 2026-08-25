@@ -1,0 +1,3 @@
+navigateToPurchaseOrders tabs: [ 'Receive Without POx' ]
+PO tab count: 0
+No PO tab found - using sidebar

@@ -1,0 +1,606 @@
+{
+  "2": {
+    "SkuNo": "2",
+    "Description": "HOME DECOR DEPT QUICK CODE",
+    "Status": "A",
+    "Type": "Q",
+    "AssortmentType": "N",
+    "AutoReplenished": false,
+    "CanOrder": false,
+    "SellingUnitOfMeasure": "EA",
+    "ShowInventoryDate": false,
+    "IsAMSEnterpriseUE": false,
+    "IsFetchingAMSPromotion": false,
+    "SalePrice": 9.99,
+    "RegularPrice": 9.99,
+    "WasPrice": 0,
+    "QuantityOnHand": 4,
+    "QuantityOnOrder": 0,
+    "SplitQty": 0,
+    "MaximumOrderQuantity": 0,
+    "LastOrderedDate": null,
+    "LastReceivedDate": null,
+    "LastAdjustmentDate": null,
+    "LastEventDate": "2010-10-01T05:00:00.000Z",
+    "LastEventNo": "ISP187",
+    "DateReceivedFromRetek": "2026-03-26T05:00:00.000Z",
+    "Discontinued": false,
+    "CreatedDate": "1998-05-03T05:00:00.000Z",
+    "Department": {
+      "Number": 57,
+      "Description": "Department 57"
+    },
+    "DepartmentClass": {
+      "Number": 281,
+      "Description": "WOOD CRAFTING"
+    },
+    "Upcs": [
+      {
+        "UpcNo": "0400100100028",
+        "IsPrimary": true
+      }
+    ],
+    "SalesHistory": {
+      "WeeklySales": [
+        {
+          "WeekNumber": "202537",
+          "UnitsSold": {
+            "OnRegularPrice": 2,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W2",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W3",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W4",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        }
+      ],
+      "CurrentFourWeekAverage": {
+        "OnRegularPrice": 0.5,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      },
+      "LYPreviousFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      },
+      "LYNextFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      }
+    },
+    "Planograms": [],
+    "VendorItems": [
+      {
+        "Id": 2,
+        "VendorId": 3038,
+        "IsPrimary": true,
+        "Sku": "HOME DECOR DEPT QUIC",
+        "Pack": 1,
+        "UnitOfMeasure": "EA",
+        "CostPerSUOM": 0,
+        "Vendor": {
+          "VendorNo": 21277,
+          "Name": "MICHAELS PRICE POINTS"
+        }
+      }
+    ],
+    "LogixPromotionItems": [],
+    "Promotions": [],
+    "Assortments": [
+      {
+        "Association": "Parent",
+        "SkuNo": "2",
+        "UpcNo": "0400100100028",
+        "Description": "HOME DECOR DEPT QUICK CODE"
+      }
+    ],
+    "OverstockItemMappings": [],
+    "SkuNumber": "2"
+  },
+  "1768": {
+    "SkuNo": "1768",
+    "Description": "BEA FBRC STIFFENER 8 OZ",
+    "Status": "A",
+    "Type": "B",
+    "AssortmentType": "N",
+    "AutoReplenished": true,
+    "CanOrder": false,
+    "SellingUnitOfMeasure": "EA",
+    "ShowInventoryDate": false,
+    "IsAMSEnterpriseUE": false,
+    "IsFetchingAMSPromotion": false,
+    "SalePrice": 12.99,
+    "RegularPrice": 12.99,
+    "WasPrice": 12.99,
+    "QuantityOnHand": 8,
+    "QuantityOnOrder": 0,
+    "SplitQty": 0,
+    "MaximumOrderQuantity": 72,
+    "LastOrderedDate": "2026-01-21T06:00:00.000Z",
+    "LastReceivedDate": "2026-02-28T19:02:09.273Z",
+    "LastAdjustmentDate": null,
+    "LastEventDate": "2012-09-22T05:00:00.000Z",
+    "LastEventNo": "ISP277",
+    "DateReceivedFromRetek": "2026-03-26T05:00:00.000Z",
+    "Discontinued": false,
+    "CreatedDate": "1998-05-03T05:00:00.000Z",
+    "Department": {
+      "Number": 72,
+      "Description": "SEASONAL HE"
+    },
+    "DepartmentClass": {
+      "Number": 650,
+      "Description": "PERSONALIZING"
+    },
+    "Upcs": [
+      {
+        "UpcNo": "0054947011087",
+        "IsPrimary": true
+      },
+      {
+        "UpcNo": "0054947133987",
+        "IsPrimary": false
+      }
+    ],
+    "SalesHistory": {
+      "WeeklySales": [
+        {
+          "WeekNumber": "202440",
+          "UnitsSold": {
+            "OnRegularPrice": 1,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "202447",
+          "UnitsSold": {
+            "OnRegularPrice": 1,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "202451",
+          "UnitsSold": {
+            "OnRegularPrice": 1,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "202452",
+          "UnitsSold": {
+            "OnRegularPrice": 1,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        }
+      ],
+      "CurrentFourWeekAverage": {
+        "OnRegularPrice": 1,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      },
+      "LYPreviousFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      },
+      "LYNextFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      }
+    },
+    "Planograms": [
+      {
+        "Id": 2266991,
+        "Number": 517,
+        "Level": "I",
+        "Section": "D",
+        "Facings": 1,
+        "Description": "Fixatives & Adhesives 20'",
+        "Quantity": 4,
+        "Sequence": 48,
+        "Department": 6,
+        "PogId": 188633,
+        "StartDate": "2025-04-25T05:00:00.000Z",
+        "CompletionDate": "2025-05-02T05:00:00.000Z",
+        "PegMax": null
+      }
+    ],
+    "VendorItems": [
+      {
+        "Id": 422,
+        "VendorId": 7061,
+        "IsPrimary": true,
+        "Sku": "SS8OZBOT12",
+        "Pack": 4,
+        "UnitOfMeasure": "CS",
+        "CostPerSUOM": 3.34,
+        "Vendor": {
+          "VendorNo": 73428,
+          "Name": "SIGNATURE MKTG AND MFG CANADA"
+        }
+      },
+      {
+        "Id": 680637,
+        "VendorId": 7061,
+        "IsPrimary": true,
+        "Sku": "SS8OZBOT12",
+        "Pack": 4,
+        "UnitOfMeasure": "CS",
+        "CostPerSUOM": 3.34,
+        "Vendor": {
+          "VendorNo": 73428,
+          "Name": "SIGNATURE MKTG AND MFG CANADA"
+        }
+      }
+    ],
+    "LogixPromotionItems": [],
+    "Promotions": [],
+    "Assortments": [
+      {
+        "Association": "Parent",
+        "SkuNo": "1768",
+        "UpcNo": "0054947011087",
+        "Description": "BEA FBRC STIFFENER 8 OZ"
+      }
+    ],
+    "OverstockItemMappings": [],
+    "SkuNumber": "1768"
+  },
+  "123458": {
+    "SkuNo": "123458",
+    "Description": "CN-MATBOARD B8456",
+    "Status": "A",
+    "Type": "B",
+    "AssortmentType": "C",
+    "AutoReplenished": false,
+    "CanOrder": false,
+    "SellingUnitOfMeasure": "EA",
+    "ShowInventoryDate": false,
+    "IsAMSEnterpriseUE": false,
+    "IsFetchingAMSPromotion": false,
+    "SalePrice": 17.99,
+    "RegularPrice": 17.99,
+    "WasPrice": 17.99,
+    "QuantityOnHand": 0,
+    "QuantityOnOrder": 0,
+    "SplitQty": 0,
+    "MaximumOrderQuantity": 0,
+    "LastOrderedDate": null,
+    "LastReceivedDate": null,
+    "LastAdjustmentDate": null,
+    "LastEventDate": "2012-09-18T05:00:00.000Z",
+    "LastEventNo": "ISP248",
+    "DateReceivedFromRetek": "2026-03-26T05:00:00.000Z",
+    "Discontinued": false,
+    "CreatedDate": "1998-05-03T05:00:00.000Z",
+    "Department": {
+      "Number": 33,
+      "Description": "CUSTOM FRAMING"
+    },
+    "DepartmentClass": {
+      "Number": 74,
+      "Description": "MATTING"
+    },
+    "Upcs": [
+      {
+        "UpcNo": "0702946002390",
+        "IsPrimary": true
+      }
+    ],
+    "SalesHistory": {
+      "WeeklySales": [
+        {
+          "WeekNumber": "W1",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W2",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W3",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W4",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        }
+      ],
+      "CurrentFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      },
+      "LYPreviousFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      },
+      "LYNextFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      }
+    },
+    "Planograms": [
+      {
+        "Id": 2333329,
+        "Number": 602,
+        "Level": "U",
+        "Section": "A",
+        "Facings": 1,
+        "Description": "32x40 Matboard",
+        "Quantity": 3,
+        "Sequence": 101,
+        "Department": 33,
+        "PogId": 194098,
+        "StartDate": "2025-09-12T05:00:00.000Z",
+        "CompletionDate": "2025-09-19T05:00:00.000Z",
+        "PegMax": null
+      }
+    ],
+    "VendorItems": [
+      {
+        "Id": 58381,
+        "VendorId": 5625,
+        "IsPrimary": true,
+        "Sku": "B8456",
+        "Pack": 1,
+        "UnitOfMeasure": "EA",
+        "CostPerSUOM": 8.51,
+        "Vendor": {
+          "VendorNo": 42735,
+          "Name": "FRAMEGUILD SUPPLIES"
+        }
+      }
+    ],
+    "LogixPromotionItems": [],
+    "Promotions": [],
+    "Assortments": [
+      {
+        "Association": "Parent",
+        "SkuNo": "123458",
+        "UpcNo": "0702946002390",
+        "Description": "CN-MATBOARD B8456"
+      }
+    ],
+    "OverstockItemMappings": [],
+    "SkuNumber": "123458"
+  },
+  "358341": {
+    "SkuNo": "358341",
+    "Description": "2FOR1 8X10 STORYBOOK MEMORIES",
+    "Status": "A",
+    "Type": "S",
+    "AssortmentType": "C",
+    "AutoReplenished": false,
+    "CanOrder": false,
+    "SellingUnitOfMeasure": "EA",
+    "ShowInventoryDate": false,
+    "IsAMSEnterpriseUE": false,
+    "IsFetchingAMSPromotion": false,
+    "SalePrice": 6,
+    "RegularPrice": 6,
+    "WasPrice": 6,
+    "QuantityOnHand": 0,
+    "QuantityOnOrder": 0,
+    "SplitQty": 0,
+    "MaximumOrderQuantity": 0,
+    "LastOrderedDate": null,
+    "LastReceivedDate": null,
+    "LastAdjustmentDate": null,
+    "LastEventDate": "2012-07-22T05:00:00.000Z",
+    "LastEventNo": "CI0477",
+    "DateReceivedFromRetek": "2026-03-26T05:00:00.000Z",
+    "Discontinued": false,
+    "CreatedDate": "2004-01-14T06:00:00.000Z",
+    "Department": {
+      "Number": 34,
+      "Description": "WALL DECOR"
+    },
+    "DepartmentClass": {
+      "Number": 3,
+      "Description": "FRAMING QUICK CODE 3"
+    },
+    "Upcs": [
+      {
+        "UpcNo": "0870820006854",
+        "IsPrimary": true
+      }
+    ],
+    "SalesHistory": {
+      "WeeklySales": [
+        {
+          "WeekNumber": "W1",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W2",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W3",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        },
+        {
+          "WeekNumber": "W4",
+          "UnitsSold": {
+            "OnRegularPrice": 0,
+            "OnPromotion": 0,
+            "OnClearance": 0
+          }
+        }
+      ],
+      "CurrentFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      },
+      "LYPreviousFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      },
+      "LYNextFourWeekAverage": {
+        "OnRegularPrice": 0,
+        "OnPromotion": 0,
+        "OnClearance": 0
+      }
+    },
+    "Planograms": [],
+    "VendorItems": [
+      {
+        "Id": 248027,
+        "VendorId": 6674,
+        "IsPrimary": true,
+        "Sku": "HR1048",
+        "Pack": 6,
+        "UnitOfMeasure": "CS",
+        "CostPerSUOM": 2.5,
+        "Vendor": {
+          "VendorNo": 63843,
+          "Name": "ARTBEATS"
+        }
+      }
+    ],
+    "LogixPromotionItems": [],
+    "Promotions": [],
+    "Assortments": [
+      {
+        "Association": "Parent",
+        "SkuNo": "358341",
+        "UpcNo": "0870820006854",
+        "Description": "2FOR1 8X10 STORYBOOK MEMORIES"
+      }
+    ],
+    "OverstockItemMappings": [],
+    "SkuNumber": "358341"
+  },
+  "384142": {
+    "SkuNo": "384142",
+    "Description": "PS-KNIT RUANA WRAP",
+    "Status": "A",
+    "Type": "G",
+    "AssortmentType": "N",
+    "AutoReplenished": false,
+    "CanOrder": true,
+    "SellingUnitOfMeasure": "EA",
+    "ShowInventoryDate": false,
+    "IsAMSEnterpriseUE": false,
+    "IsFetchingAMSPromotion": false,
+    "SalePrice": 9.99,
+    "RegularPrice": 9.99,
+    "WasPrice": 0,
+    "QuantityOnHand": 0,
+    "QuantityOnOrder": 0,
+    "SplitQty": 0,
+    "MaximumOrderQuantity": 0,
+    "LastOrderedDate": null,
+    "LastReceivedDate": null,
+    "LastAdjustmentDate": null,
+    "LastEventDate": "2009-10-26T05:00:00.000Z",
+    "LastEventNo": "ISP788",
+    "DateReceivedFromRetek": "2026-03-26T05:00:00.000Z",
+    "Discontinued": false,
+    "CreatedDate": "2005-06-20T05:00:00.000Z",
+    "Department": {
+      "Number": 62,
+      "Description": "CLASSROOM PROGRAM"
+    },
+    "DepartmentClass": {
+      "Number": 99,
+      "Description": "CLASS NOT IN USE"
+    },
+    "Upcs": [
+      {
+        "UpcNo": "0400100254738",
+        "IsPrimary": true
+      }
+    ],
+    "SalesHistory": null,
+    "Planograms": [],
+    "VendorItems": [
+      {
+        "Id": 267135,
+        "VendorId": 3038,
+        "IsPrimary": true,
+        "Sku": "25106",
+        "Pack": 1,
+        "UnitOfMeasure": "EA",
+        "CostPerSUOM": 0,
+        "Vendor": {
+          "VendorNo": 21277,
+          "Name": "MICHAELS PRICE POINTS"
+        }
+      }
+    ],
+    "LogixPromotionItems": [],
+    "Promotions": [],
+    "Assortments": [
+      {
+        "Association": "Parent",
+        "SkuNo": "384142",
+        "UpcNo": "0400100254738",
+        "Description": "PS-KNIT RUANA WRAP"
+      }
+    ],
+    "OverstockItemMappings": [],
+    "SkuNumber": "384142"
+  }
+}

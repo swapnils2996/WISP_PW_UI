@@ -1,0 +1,251 @@
+{
+  "2": {
+    "Item": {
+      "SkuNo": "2",
+      "Description": "HOME DECOR DEPT QUICK CODE",
+      "UpcNo": "0400100100028",
+      "DepartmentId": 53,
+      "DepartmentNo": 57,
+      "DepartmentDesc": "Department 57",
+      "Status": "A",
+      "Type": "Q",
+      "AutoReplenished": false,
+      "CanOrder": false,
+      "SellingUnitOfMeasure": "EA",
+      "WasPrice": 0,
+      "QuantityOnHand": 4,
+      "QuantityOnOrder": 0,
+      "MaximumOrderQuantity": 0,
+      "LastOrderedDate": null,
+      "LastReceivedDate": null,
+      "LastAdjustmentDate": null,
+      "LastEventDate": "2010-10-01T05:00:00.000Z",
+      "LastEventNo": "ISP187",
+      "Discontinued": false,
+      "CreatedDate": "1998-05-03T05:00:00.000Z"
+    },
+    "Price": {
+      "SellingPrice": 9.99,
+      "RegularPrice": 9.99,
+      "WasPrice": 17.99,
+      "Cost": 4.99,
+      "Margin": 5
+    },
+    "SalesHistory": [
+      {
+        "WeekNo": "202537",
+        "SalesType": "R",
+        "SalesQuantity": 2
+      }
+    ],
+    "Planogram": [],
+    "Vendor": [
+      {
+        "VendorNo": 21277,
+        "VendorName": "MICHAELS PRICE POINTS",
+        "Pack": 1,
+        "UOM": "EA",
+        "VendorSku": "",
+        "IsPrimary": true
+      }
+    ],
+    "Promotions": [],
+    "Assortment": [],
+    "Overstock": []
+  },
+  "1768": {
+    "Item": {
+      "SkuNo": "1768",
+      "Description": "BEA FBRC STIFFENER 8 OZ",
+      "UpcNo": "0054947011087",
+      "DepartmentId": 62,
+      "DepartmentNo": 72,
+      "DepartmentDesc": "SEASONAL HE",
+      "Status": "A",
+      "Type": "B",
+      "AutoReplenished": true,
+      "CanOrder": false,
+      "SellingUnitOfMeasure": "EA",
+      "WasPrice": 12.99,
+      "QuantityOnHand": 8,
+      "QuantityOnOrder": 0,
+      "MaximumOrderQuantity": 72,
+      "LastOrderedDate": "2026-01-21T06:00:00.000Z",
+      "LastReceivedDate": "2026-02-28T19:02:09.273Z",
+      "LastAdjustmentDate": null,
+      "LastEventDate": "2012-09-22T05:00:00.000Z",
+      "LastEventNo": "ISP277",
+      "Discontinued": false,
+      "CreatedDate": "1998-05-03T05:00:00.000Z"
+    },
+    "Price": {
+      "SellingPrice": 12.99,
+      "RegularPrice": 12.99,
+      "WasPrice": 12.99,
+      "Cost": 6.495,
+      "Margin": 6.495
+    },
+    "SalesHistory": [
+      {
+        "WeekNo": "202546",
+        "SalesType": "R",
+        "SalesQuantity": 2
+      },
+      {
+        "WeekNo": "202545",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202543",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202523",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202510",
+        "SalesType": "R",
+        "SalesQuantity": 2
+      },
+      {
+        "WeekNo": "202508",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202507",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202506",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202452",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202451",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202447",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      },
+      {
+        "WeekNo": "202440",
+        "SalesType": "R",
+        "SalesQuantity": 1
+      }
+    ],
+    "Planogram": [
+      {
+        "Id": 2266991,
+        "Number": 517,
+        "Level": "I",
+        "Section": "D",
+        "Description": "Fixatives & Adhesives 20'",
+        "Facings": 1,
+        "Quantity": 4,
+        "Sequence": 48,
+        "Department": 6,
+        "PogId": 188633,
+        "StartDate": "2025-04-25T05:00:00.000Z",
+        "CompletionDate": "2025-05-02T05:00:00.000Z"
+      }
+    ],
+    "Vendor": [
+      {
+        "VendorNo": 73428,
+        "VendorName": "SIGNATURE MKTG AND MFG CANADA",
+        "Pack": 4,
+        "UOM": "EA",
+        "VendorSku": "",
+        "IsPrimary": true
+      },
+      {
+        "VendorNo": 73428,
+        "VendorName": "SIGNATURE MKTG AND MFG CANADA",
+        "Pack": 4,
+        "UOM": "EA",
+        "VendorSku": "",
+        "IsPrimary": false
+      }
+    ],
+    "Promotions": [],
+    "Assortment": [],
+    "Overstock": []
+  },
+  "123458": {
+    "Item": {
+      "SkuNo": "123458",
+      "Description": "CN-MATBOARD B8456",
+      "UpcNo": "0702946002390",
+      "DepartmentId": 32,
+      "DepartmentNo": 33,
+      "DepartmentDesc": "CUSTOM FRAMING",
+      "Status": "A",
+      "Type": "B",
+      "AutoReplenished": false,
+      "CanOrder": false,
+      "SellingUnitOfMeasure": "EA",
+      "WasPrice": 17.99,
+      "QuantityOnHand": 0,
+      "QuantityOnOrder": 0,
+      "MaximumOrderQuantity": 0,
+      "LastOrderedDate": null,
+      "LastReceivedDate": null,
+      "LastAdjustmentDate": null,
+      "LastEventDate": "2012-09-18T05:00:00.000Z",
+      "LastEventNo": "ISP248",
+      "Discontinued": false,
+      "CreatedDate": "1998-05-03T05:00:00.000Z"
+    },
+    "Price": {
+      "SellingPrice": 17.99,
+      "RegularPrice": 17.99,
+      "WasPrice": 17.99,
+      "Cost": 8.995,
+      "Margin": 8.995
+    },
+    "SalesHistory": [],
+    "Planogram": [
+      {
+        "Id": 2333329,
+        "Number": 602,
+        "Level": "U",
+        "Section": "A",
+        "Description": "32x40 Matboard",
+        "Facings": 1,
+        "Quantity": 3,
+        "Sequence": 101,
+        "Department": 33,
+        "PogId": 194098,
+        "StartDate": "2025-09-12T05:00:00.000Z",
+        "CompletionDate": "2025-09-19T05:00:00.000Z"
+      }
+    ],
+    "Vendor": [
+      {
+        "VendorNo": 42735,
+        "VendorName": "FRAMEGUILD SUPPLIES",
+        "Pack": 1,
+        "UOM": "EA",
+        "VendorSku": "",
+        "IsPrimary": true
+      }
+    ],
+    "Promotions": [],
+    "Assortment": [],
+    "Overstock": []
+  }
+}

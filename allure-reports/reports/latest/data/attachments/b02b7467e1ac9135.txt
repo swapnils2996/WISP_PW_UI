@@ -1,0 +1,1 @@
+RP_WTC05 NOTE: Inbound Trailer Pool Workload is not present in the current sidebar navigation — "Confirm with tech on the UI flow" per CSV.
