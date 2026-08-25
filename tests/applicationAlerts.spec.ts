@@ -164,5 +164,6 @@ test.describe('Application Alerts', () => {
     expect(result.alertsTabStillAccessible).toBe(true);
     expect(result.rowCountAfterTabSwitch).toBeGreaterThanOrEqual(0);
     await expect(alertsPage.appAlert).toBeVisible();
+    //test
   });
 });
