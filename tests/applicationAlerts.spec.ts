@@ -159,11 +159,10 @@ test.describe('Application Alerts', () => {
   // ── AL_WTC10 – Multi-tab coexistence with Application Alerts ─────────────────
   test('AL_WTC10 - Application Alerts coexists with other open tabs', async () => {
     const result = await alertsPage.tc10_multiTabNavigation(SCREENSHOTS_DIR);
-
+//test
     expect(result.multipleTabsVisible).toBe(true);
     expect(result.alertsTabStillAccessible).toBe(true);
     expect(result.rowCountAfterTabSwitch).toBeGreaterThanOrEqual(0);
     await expect(alertsPage.appAlert).toBeVisible();
-    //test
   });
 });
